@@ -1,0 +1,84 @@
+.TH spc 1 "21 Nov. 2018" "version 0.2.3" "SPC - Secure Personal Cloud"
+.SH NAME
+spc - secure personal cloud with choice for encryption-decryption scheme
+.SH SYNOPSIS
+.B spc
+.RI "[login] [upload] [logout] [config edit] [status] [en-de list] [en-de update]..."
+.SH DESCRIPTION
+.B spc
+is a cloud based file-system like google drive. The client has full control over encryption schema of data that is being uploaded on the server. 
+.PP
+User can change the encryption-decryption scheme anytime they want to without loosing their previously uploaded files on the cloud.
+.PP
+User can upload and download files and folders while maintaining the directory structure.
+.PP
+.B spc
+can be used to syncronization data between server and client.
+.SH COMMAND LINE OPTIONS
+.TP
+.B login
+	asks for your username and password and logs in if login details are valid
+.TP
+.B upload
+	to upload your file to the cloud
+.TP
+.B logout
+	to logout of your current session
+.TP
+.B config edit
+	to change user password
+.TP
+.B status
+	displays the status of the observed directory at any point. Let A - set of files on client, B - set of files on server. 
+.br
+	This should communicate with the server, calculate the sets A and B and represent A ∩ B (both filepath and content match), 
+.br
+	A - B, B - A and the sync status of each of the files that is required to be synced 
+.TP
+.B en-de list
+	to list all the encryption-decryption schemes available
+.TP
+.B en-de update
+	to change the encryption-decryption scheme
+.TP
+.B observe "<directory-path>"
+	use observe before sync to sync a particular directory
+.TP
+.B sync
+	to sync all the client and server files
+.TP
+.B version
+	show the version of spc install on your system
+.TP
+.B server
+	prints public information about server like its ip and port number
+.TP
+.B help
+	to see all the basic spc commands
+.SH EXAMPLES
+The basic usage is as follows:
+.PP
+.RS
+.TP
+.BR $ "spc login"
+.TP
+.BR $ "spc upload"
+.TP
+.BR $ "spc logout"
+.TP
+.BR $ "spc config edit"
+.TP
+.BR $ "spc status"
+.TP
+.BR $ "spc en-de update"
+.TP
+.BR $ "spc version"
+.RE
+.SH BUGS
+There are no known bugs but if you find any please tell us at lakshyakumar999@gmail.com
+.SH LICENSE
+License for SPC is given and approved by Indian Institute of Technology, Bombay
+.SH EXIT STATUS
+Trust our cloud your file are TRULY SECURE :)
+.SH AUTHOR
+This manpage is written by Lakshya Kumar, Amish Jain and Satvik Ambati

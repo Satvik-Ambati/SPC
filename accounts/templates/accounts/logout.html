@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>Logout</title>
+	{% endblock head %}
+</head>
+<body>
+	{% block body%}
+		<div style="background: #ffffff; padding: 10px 20px; margin-bottom: 20px; margin-right: 200px; margin-left: 200px;">
+			<h2>You have been logged out</h2>
+			<hr style="font-size: 1px; color: rgba(0,0,0,0); line-height: 1px; margin-top: -1px;">
+			<large class="text-muted">
+				<a href="{% url 'login' %}">Log In Again</a>
+			</large>
+		</div>
+	{% endblock body %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>Upload</title>
+	{% endblock head %}
+</head>
+<body>
+	{% block body%}
+		<br />
+		<div style="background: #ffffff; padding: 10px 20px; border: 2px solid #dddddd; border-radius: 3px; margin-bottom: 20px; margin-right: 200px; margin-left: 200px;">
+			<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<legend class="border-bottom mb-4">Upload Files</legend>
+					{{ form|crispy }}
+				</fieldset>
+				<div class="form-group">
+					<button class="btn btn-success" type="submit">Upload</button>
+				</div>
+			</form>
+		</div>
+	{% endblock body %}
+</body>
+</html>

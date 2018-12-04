@@ -1,0 +1,7 @@
+django==2.1.2
+django-crispy-forms==1.7.2
+django-db-file-storage==0.5.3
+beautifulsoup4==4.6.3
+pycrypto==2.6.1
+requests==2.20.1
+pycryptodome==3.7.0

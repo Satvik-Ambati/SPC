@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>Register</title>
+	{% endblock head %}
+</head>
+<body>
+	{% block body%}
+		<br />
+		<div style="background: #ffffff; padding: 10px 20px; border: 2px solid #dddddd; border-radius: 3px; margin-bottom: 20px; margin-right: 200px; margin-left: 200px;">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<legend class="border-bottom mb-4">Join Today</legend>
+					{{ form|crispy }}
+				</fieldset>
+				<div class="form-group">
+					<button class="btn btn-success" type="submit">Sign Up</button>
+				</div>
+			</form>
+			<div class="border-top pt-3">
+				<small class="text-muted">
+					Already Have an account? <a href="{% url 'login' %}" class="ml-2">Sign In</a>
+				</small>
+			</div>
+		</div>
+	{% endblock body %}
+</body>
+</html>

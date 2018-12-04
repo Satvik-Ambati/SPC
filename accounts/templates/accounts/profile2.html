@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<title>Profile</title>
+	{% endblock head %}
+</head>
+<body>
+	{% block body%}
+		<div style="background: #ffffff; padding: 10px 20px; /*border: 2px solid #dddddd; border-radius: 3px;*/ margin-bottom: 20px; margin-right: 200px;">
+			<h1>Welcome {{ user.username }}!</h1>
+
+			<h2>{{ paths }}</h2>
+		</div>
+	<div class="container">
+	<ul>
+		{% for item in folders %}
+		<li>
+
+            {% with paths|add:"/"|add:item as new_path %}
+			
+			<a href = "{% url 'profile2' new_path %}" >{{ item }}</a>
+			{% endwith %}
+		</li>
+		{% endfor %}
+		{% for i in files %}
+		<li> <a href="{% url 'db_file_storage.get_file' %}?name={{ i.document }}"  target="_blank" class="display_link">{{ i.filename }}</a>&nbsp &nbsp &nbsp &nbsp &nbsp
+			<a href="{% url 'db_file_storage.download_file' %}?name={{ i.document }}"  class="download_link">Download</a>
+			<a href="{% url 'delete' i.id %}">Delete</a>
+		</li>
+		{% endfor %}
+
+	</ul>
+	</div>
+	{% endblock body %}
+</body>
+</html>
